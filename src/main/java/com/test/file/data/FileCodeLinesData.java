@@ -24,4 +24,13 @@ public class FileCodeLinesData {
     public String toString() {
         return String.format("%s : %d", reviewedFile.getName(), codeLines);
     }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FileCodeLinesData that = (FileCodeLinesData) o;
+        return codeLines == that.codeLines &&
+                reviewedFile.equals(that.reviewedFile);
+    }
 }
